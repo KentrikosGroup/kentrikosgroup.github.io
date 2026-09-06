@@ -1,13 +1,161 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kentrikos Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0d12;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-60px, -60px); }
+        }
+
+        .glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(88, 130, 193, 0.08), transparent 70%);
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .glow-two {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(99, 179, 237, 0.045), transparent 65%);
+            bottom: 12%;
+            right: 10%;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            padding: 44px 36px;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+            letter-spacing: -0.015em;
+            background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 78%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 58px;
+            line-height: 1.15;
+        }
+
+        .section-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(148, 163, 184, 0.55);
+            margin-bottom: 20px;
+        }
+
+        .section-divider {
+            width: 42px;
+            height: 1px;
+            background: rgba(148, 163, 184, 0.23);
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 54px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-family: inherit;
+            color: #ffffff;
+            background: transparent;
+            border: 1.5px solid rgba(148, 163, 184, 0.33);
+            border-radius: 9999px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.26s ease;
+            letter-spacing: 0.035em;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 0 16px rgba(148, 163, 184, 0.06);
+        }
+
+        .btn:hover {
+            border-color: rgba(180, 195, 220, 0.65);
+            box-shadow: 0 0 38px rgba(160, 185, 215, 0.11);
+            transform: scale(1.008);
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        .footer-note {
+            margin-top: 66px;
+            font-size: 0.82rem;
+            color: rgba(148, 163, 184, 0.37);
+            letter-spacing: 0.055em;
+        }
+    </style>
 </head>
 <body>
-    <h1>🚧 Kentrikos Group</h1>
-    <p>The group homepage is under construction, stay tuned...</p>
-    <hr>
-    <p><a href="https://github.com/KentrikosGroup">👉 Check out our organization</a></p>
+
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <div class="glow-two"></div>
+
+    <div class="container">
+        <h1>Kentrikos Group<br>Homepage</h1>
+
+        <div class="section-label">Check out our projects</div>
+        <div class="section-divider"></div>
+
+        <a href="https://github.com/KentrikosGroup/AzLauncher" target="_blank" rel="noopener noreferrer" class="btn">
+            AzLauncher
+        </a>
+
+        <div class="footer-note">// build something real</div>
+    </div>
+
 </body>
 </html>
